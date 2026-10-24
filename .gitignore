@@ -1,0 +1,20 @@
+# Raw and processed datasets
+data/
+Dataset/
+*.csv
+!reports/*.csv
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# IDE and operating system files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log

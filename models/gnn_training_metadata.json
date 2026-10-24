@@ -1,0 +1,13 @@
+{
+    "dataset": "D:\\ML GNN PROJECT\\gnn-intrusion-detection\\data\\processed\\cic_ids2017_cleaned.csv",
+    "valid_flows": 2830743,
+    "training_flows": 1981520,
+    "validation_flows": 424611,
+    "test_flows": 424612,
+    "number_of_nodes": 19129,
+    "number_of_features": 21,
+    "best_epoch": 4,
+    "best_validation_f1": 0.9979281933366866,
+    "training_seconds": 13.31051778793335,
+    "evaluation_protocol": "Random flow split; train-only preprocessing, host feature aggregation and message-passing edges"
+}
