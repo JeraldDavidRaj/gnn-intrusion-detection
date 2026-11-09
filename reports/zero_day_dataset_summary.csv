@@ -1,0 +1,16 @@
+Metric,Value
+Total Flows,2830743
+Benign Flows,2273097
+Known Attack Flows,398716
+PortScan Flows,158930
+Unique Flow IDs,1085071
+Repeated Flow ID Rows,1745672
+Selected Column Duplicate Rows,289046
+Repeated Full Row Hashes,291
+Valid Timestamps,2830743
+Invalid Timestamps,0
+Benign Hosts,19129
+Known Attack Hosts,13
+PortScan Hosts,2
+PortScan Benign Host Overlap,2
+PortScan Known Attack Host Overlap,2
