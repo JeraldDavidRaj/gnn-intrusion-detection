@@ -1,0 +1,40 @@
+{
+    "experiment": "Hybrid GNN held-out PortScan",
+    "training_attack_categories": [
+        "DoS GoldenEye",
+        "DoS Hulk",
+        "DoS Slowhttptest",
+        "DoS slowloris",
+        "FTP-Patator",
+        "Heartbleed",
+        "SSH-Patator"
+    ],
+    "excluded_attack_category": "PortScan",
+    "training_attack_flows": 250000,
+    "validation_attack_flows": 2216,
+    "benign_test_flows": 414322,
+    "portscan_test_flows": 158930,
+    "best_epoch": 9,
+    "validation_balanced_accuracy": 0.9885522563176895,
+    "decision_threshold": 0.73,
+    "accuracy": 0.9408305596840482,
+    "precision": 0.8242440590746629,
+    "recall": 0.9997609010256088,
+    "f1_score": 0.9035578314657537,
+    "balanced_accuracy": 0.9589931696056838,
+    "false_positive_rate": 0.0817745618142411,
+    "false_negative_rate": 0.00023909897439124142,
+    "portscan_detection_rate": 0.9997609010256088,
+    "roc_auc": 0.9217397833607998,
+    "pr_auc": 0.6416761047954627,
+    "confusion_matrix": [
+        [
+            380441,
+            33881
+        ],
+        [
+            38,
+            158892
+        ]
+    ]
+}

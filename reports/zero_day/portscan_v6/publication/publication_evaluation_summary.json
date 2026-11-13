@@ -1,0 +1,214 @@
+{
+    "model_version": "V6",
+    "retraining_performed": false,
+    "checkpoint": "D:\\ML GNN PROJECT\\gnn-intrusion-detection\\models\\zero_day_gnn_v6_best.pth",
+    "best_epoch": 40,
+    "calibration_source": "benign_validation_only",
+    "calibration_percentile": 99.0,
+    "component_thresholds": {
+        "GNN": 1.8360816800594315,
+        "Isolation_Forest": 0.1782703593199032,
+        "Scan_Behaviour": 4.899888038635254,
+        "Combined_V6": 0.9270295477633376
+    },
+    "combined_weights": {
+        "gnn": 0.35,
+        "isolation_forest": 0.4,
+        "scan_behaviour": 0.25
+    },
+    "test_counts": {
+        "benign": 414322,
+        "portscan": 158930
+    },
+    "component_ablation": {
+        "GNN": {
+            "threshold": 1.8360816800594315,
+            "accuracy": 0.6636470522562503,
+            "precision": 0.015083431122814047,
+            "recall": 0.0033159252501101114,
+            "f1": 0.005436660837988539,
+            "benign_fpr": 0.08305617370064829,
+            "portscan_detection_rate": 0.0033159252501101114,
+            "tn": 379910,
+            "fp": 34412,
+            "fn": 158403,
+            "tp": 527,
+            "confusion_matrix": [
+                [
+                    379910,
+                    34412
+                ],
+                [
+                    158403,
+                    527
+                ]
+            ],
+            "roc_auc": 0.8476392515631741,
+            "pr_auc": 0.5282112865712486
+        },
+        "Isolation_Forest": {
+            "threshold": 0.1782703593199032,
+            "accuracy": 0.7227536929657463,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "benign_fpr": 4.827163413963053e-06,
+            "portscan_detection_rate": 0.0,
+            "tn": 414320,
+            "fp": 2,
+            "fn": 158930,
+            "tp": 0,
+            "confusion_matrix": [
+                [
+                    414320,
+                    2
+                ],
+                [
+                    158930,
+                    0
+                ]
+            ],
+            "roc_auc": 0.9042814611020171,
+            "pr_auc": 0.8746700126591774
+        },
+        "Scan_Behaviour": {
+            "threshold": 4.899888038635254,
+            "accuracy": 0.7906243676428517,
+            "precision": 0.8479439068452966,
+            "recall": 0.29828226263134716,
+            "f1": 0.4413206291281297,
+            "benign_fpr": 0.020517858091049956,
+            "portscan_detection_rate": 0.29828226263134716,
+            "tn": 405821,
+            "fp": 8501,
+            "fn": 111524,
+            "tp": 47406,
+            "confusion_matrix": [
+                [
+                    405821,
+                    8501
+                ],
+                [
+                    111524,
+                    47406
+                ]
+            ],
+            "roc_auc": 0.8206061549905987,
+            "pr_auc": 0.7448503185779738
+        },
+        "Combined_V6": {
+            "threshold": 0.9270295477633376,
+            "accuracy": 0.9624231577037673,
+            "precision": 0.9983170478698323,
+            "recall": 0.8659221040709747,
+            "f1": 0.9274183494337613,
+            "benign_fpr": 0.0005599509560197142,
+            "portscan_detection_rate": 0.8659221040709747,
+            "tn": 414090,
+            "fp": 232,
+            "fn": 21309,
+            "tp": 137621,
+            "confusion_matrix": [
+                [
+                    414090,
+                    232
+                ],
+                [
+                    21309,
+                    137621
+                ]
+            ],
+            "roc_auc": 0.8980873282840909,
+            "pr_auc": 0.9113139331711154
+        }
+    },
+    "combined_threshold_tradeoff": {
+        "95.0": {
+            "validation_percentile": 95.0,
+            "threshold": 0.8615285756822084,
+            "benign_test_fpr": 0.07928374549263616,
+            "portscan_detection_rate": 0.8659221040709747,
+            "confusion_matrix": [
+                [
+                    381473,
+                    32849
+                ],
+                [
+                    21309,
+                    137621
+                ]
+            ]
+        },
+        "97.5": {
+            "validation_percentile": 97.5,
+            "threshold": 0.9026159710302308,
+            "benign_test_fpr": 0.0023677236545488773,
+            "portscan_detection_rate": 0.8659221040709747,
+            "confusion_matrix": [
+                [
+                    413341,
+                    981
+                ],
+                [
+                    21309,
+                    137621
+                ]
+            ]
+        },
+        "99.0": {
+            "validation_percentile": 99.0,
+            "threshold": 0.9270295477633376,
+            "benign_test_fpr": 0.0005599509560197142,
+            "portscan_detection_rate": 0.8659221040709747,
+            "confusion_matrix": [
+                [
+                    414090,
+                    232
+                ],
+                [
+                    21309,
+                    137621
+                ]
+            ]
+        },
+        "99.5": {
+            "validation_percentile": 99.5,
+            "threshold": 0.9542884322345606,
+            "benign_test_fpr": 9.654326827926106e-06,
+            "portscan_detection_rate": 0.5996602277732335,
+            "confusion_matrix": [
+                [
+                    414318,
+                    4
+                ],
+                [
+                    63626,
+                    95304
+                ]
+            ]
+        },
+        "99.9": {
+            "validation_percentile": 99.9,
+            "threshold": 0.9695741609232144,
+            "benign_test_fpr": 0.0,
+            "portscan_detection_rate": 0.32433146668344554,
+            "confusion_matrix": [
+                [
+                    414322,
+                    0
+                ],
+                [
+                    107384,
+                    51546
+                ]
+            ]
+        }
+    },
+    "limitations": [
+        "PortScan was excluded from model fitting and threshold calibration.",
+        "Host mapping is transductive.",
+        "Temporal features use previous completed minute/five-minute buckets; this is not sub-minute streaming.",
+        "Test features reproduce the V6 combined chronological test stream: earlier benign and PortScan observations can contribute to later test-flow history. This is label-blind but is a mixed-class online-history protocol, not independent per-class replay.",
+        "The held-out attack evaluation covers PortScan only, not every possible zero-day attack."
+    ]
+}

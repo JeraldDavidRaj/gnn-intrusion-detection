@@ -1,0 +1,89 @@
+{
+    "model_version": "V6",
+    "architecture": "GCN flow/causal-temporal reconstruction + benign-only temporal Isolation Forest + source-destination pair port-scan score",
+    "training_type": "Benign-only",
+    "attack_labels_used_for_training": false,
+    "best_epoch": 40,
+    "best_validation_nll": 0.4966356570019287,
+    "threshold_percentile": 99.0,
+    "threshold": 0.9270295477633376,
+    "weights": {
+        "gnn": 0.35,
+        "temporal_iforest": 0.4,
+        "scan_rule": 0.25
+    },
+    "temporal_features": [
+        "src_flows_1m",
+        "src_unique_dst_ip_1m",
+        "src_unique_dst_port_1m",
+        "src_syn_count_1m",
+        "src_syn_ratio_1m",
+        "src_flows_5m",
+        "src_unique_dst_ip_5m",
+        "src_unique_dst_port_5m",
+        "dst_flows_1m",
+        "dst_unique_src_ip_1m",
+        "dst_unique_src_port_1m",
+        "dst_syn_count_1m",
+        "src_destination_port_entropy_1m",
+        "pair_flows_prev_1m",
+        "pair_unique_dst_ports_prev_1m",
+        "pair_unique_dst_ports_prev_5m"
+    ],
+    "temporal_semantics": "previous completed minute and previous completed five-minute bucket; current bucket excluded",
+    "benign_test_flows": 414322,
+    "portscan_test_flows": 158930,
+    "accuracy": 0.9624231577037673,
+    "precision": 0.9983170478698323,
+    "recall": 0.8659221040709747,
+    "f1_score": 0.9274183494337613,
+    "false_positive_rate": 0.0005599509560197142,
+    "false_negative_rate": 0.13407789592902536,
+    "benign_test_false_positive_rate": 0.0005599509560197142,
+    "portscan_detection_rate": 0.8659221040709747,
+    "roc_auc": 0.8980870145245434,
+    "pr_auc": 0.9113137646348882,
+    "confusion_matrix": [
+        [
+            414090,
+            232
+        ],
+        [
+            21309,
+            137621
+        ]
+    ],
+    "threshold_tradeoff": {
+        "95.0": {
+            "validation_percentile": 95.0,
+            "threshold": 0.8615285756822084,
+            "benign_test_fpr": 0.07928374549263616,
+            "portscan_detection_rate": 0.8659221040709747
+        },
+        "97.5": {
+            "validation_percentile": 97.5,
+            "threshold": 0.9026159710302308,
+            "benign_test_fpr": 0.0023677236545488773,
+            "portscan_detection_rate": 0.8659221040709747
+        },
+        "99.0": {
+            "validation_percentile": 99.0,
+            "threshold": 0.9270295477633376,
+            "benign_test_fpr": 0.0005599509560197142,
+            "portscan_detection_rate": 0.8659221040709747
+        },
+        "99.5": {
+            "validation_percentile": 99.5,
+            "threshold": 0.9542884322345606,
+            "benign_test_fpr": 9.654326827926106e-06,
+            "portscan_detection_rate": 0.5996602277732335
+        },
+        "99.9": {
+            "validation_percentile": 99.9,
+            "threshold": 0.9695741609232144,
+            "benign_test_fpr": 0.0,
+            "portscan_detection_rate": 0.32433146668344554
+        }
+    },
+    "limitations": "PortScan is excluded from fitting and threshold calibration. Host mapping is transductive. Temporal features use previous completed minute/five-minute buckets only. This is causal bucketed evaluation, not sub-minute event-by-event streaming. Host mapping remains transductive; PortScan is one held-out attack category."
+}

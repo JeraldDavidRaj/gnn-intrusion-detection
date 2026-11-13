@@ -1,0 +1,15 @@
+{
+    "calibration_source": "benign_validation_only",
+    "percentile": 99.0,
+    "thresholds": {
+        "GNN": 1.8360816800594315,
+        "Isolation_Forest": 0.1782703593199032,
+        "Scan_Behaviour": 4.899888038635254,
+        "Combined_V6": 0.9270295477633376
+    },
+    "validation_component_thresholds": {
+        "GNN_NLL": 1.8360816800594315,
+        "Isolation_Forest_Score": 0.1782703593199032,
+        "Scan_Behaviour_Score": 4.899888038635254
+    }
+}

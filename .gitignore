@@ -1,15 +1,23 @@
 # Raw and processed datasets
 data/
 Dataset/
+
+# Ignore CSV files by default, but retain project reports
 *.csv
+!reports/
+!reports/**/*.csv
 !reports/*.csv
 
 # Python cache and virtual environments
 __pycache__/
 *.py[cod]
+.pytest_cache/
 .venv/
 venv/
+
+# Secrets and environment files
 .env
+.env.*
 
 # IDE and operating system files
 .vscode/
@@ -18,3 +26,11 @@ Thumbs.db
 
 # Temporary files
 *.log
+
+# Archived experiments - local only
+archive/
+
+# Large PortScan V6 artifacts - keep locally
+models/portscan_v6/zero_day_v6_temporal_iforest.pkl
+reports/zero_day/portscan_v6/evaluation/zero_day_v6_flow_predictions.csv
+reports/zero_day/portscan_v6/publication/all_test_flow_predictions.csv

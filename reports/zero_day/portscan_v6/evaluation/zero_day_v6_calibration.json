@@ -1,0 +1,11 @@
+{
+    "threshold_percentile": 99.0,
+    "threshold": 0.9270295477633376,
+    "validation_component_99th_percentiles": {
+        "gnn": 1.8360816800594315,
+        "iforest": 0.1782703593199032,
+        "scan_rule": 4.899888038635254
+    },
+    "temporal_scaler": "D:\\ML GNN PROJECT\\gnn-intrusion-detection\\models\\zero_day_v6_temporal_scaler.pkl",
+    "isolation_forest": "D:\\ML GNN PROJECT\\gnn-intrusion-detection\\models\\zero_day_v6_temporal_iforest.pkl"
+}
