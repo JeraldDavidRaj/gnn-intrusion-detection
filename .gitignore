@@ -34,3 +34,15 @@ archive/
 models/portscan_v6/zero_day_v6_temporal_iforest.pkl
 reports/zero_day/portscan_v6/evaluation/zero_day_v6_flow_predictions.csv
 reports/zero_day/portscan_v6/publication/all_test_flow_predictions.csv
+
+# Large experiment data
+experiments/**/data/prepared/
+experiments/**/data/graphs/
+
+# Large trained model artifacts
+experiments/**/*.pth
+experiments/**/*.pt
+experiments/**/*.pkl
+
+# Large prediction outputs
+experiments/**/*predictions*.csv

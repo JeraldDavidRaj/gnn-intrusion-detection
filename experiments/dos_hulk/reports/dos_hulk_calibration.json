@@ -1,0 +1,11 @@
+{
+    "threshold_percentile": 99.0,
+    "threshold": 0.961082351634211,
+    "validation_component_99th_percentiles": {
+        "gnn": 2.46248695611954,
+        "iforest": 0.09024146112979692,
+        "behaviour_rule": 5.254621505737305
+    },
+    "temporal_scaler": "D:\\ML GNN PROJECT\\gnn-intrusion-detection\\experiments\\dos_hulk\\models\\dos_hulk_temporal_scaler.pkl",
+    "isolation_forest": "D:\\ML GNN PROJECT\\gnn-intrusion-detection\\experiments\\dos_hulk\\models\\dos_hulk_temporal_iforest.pkl"
+}

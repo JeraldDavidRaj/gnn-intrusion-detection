@@ -1,0 +1,34 @@
+[
+    {
+        "date": "2017-07-04",
+        "flows": 34300,
+        "false_positives": null,
+        "false_positive_rate": null,
+        "unique_destinations": 1937,
+        "unique_destination_ports": 67,
+        "mean_flow_bytes_per_second": 922272.6630564384,
+        "median_flow_bytes_per_second": 5532.859395,
+        "median_flow_duration": 48751.0,
+        "median_forward_packets": 3.0,
+        "median_backward_packets": 2.0,
+        "mean_gnn_rank": null,
+        "mean_iforest_rank": null,
+        "mean_behaviour_rank": null
+    },
+    {
+        "date": "2017-07-05",
+        "flows": 28343,
+        "false_positives": 9026,
+        "false_positive_rate": 0.31845605616907174,
+        "unique_destinations": 1236,
+        "unique_destination_ports": 66,
+        "mean_flow_bytes_per_second": 1903246.3845361394,
+        "median_flow_bytes_per_second": 13457.561590000001,
+        "median_flow_duration": 77929.0,
+        "median_forward_packets": 4.0,
+        "median_backward_packets": 2.0,
+        "mean_gnn_rank": 0.6647422005101862,
+        "mean_iforest_rank": 0.7798169586869346,
+        "mean_behaviour_rank": 0.6960300118343382
+    }
+]

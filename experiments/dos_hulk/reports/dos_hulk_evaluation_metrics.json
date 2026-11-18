@@ -1,0 +1,107 @@
+{
+    "experiment": "DoS Hulk Zero-Day Detection",
+    "architecture": "GCN flow/causal-temporal reconstruction + benign-only temporal Isolation Forest; behaviour rule excluded from the DoS Hulk ensemble",
+    "training_type": "Benign-only",
+    "attack_labels_used_for_training": false,
+    "best_epoch": 60,
+    "best_validation_nll": 0.38889538016214337,
+    "threshold_percentile": 99.0,
+    "threshold": 0.961082351634211,
+    "weights": {
+        "gnn": 0.2,
+        "temporal_iforest": 0.8,
+        "behaviour_rule": 0.0
+    },
+    "training_configuration": {
+        "epochs_max": 60,
+        "patience": 10,
+        "learning_rate_initial": 0.0005,
+        "learning_rate_minimum": 1e-05,
+        "optimizer": "AdamW",
+        "scheduler": "ReduceLROnPlateau",
+        "dropout": 0.25,
+        "isolation_forest_trees": 500
+    },
+    "temporal_features": [
+        "src_flows_1m",
+        "src_unique_dst_ip_1m",
+        "src_unique_dst_port_1m",
+        "src_syn_count_1m",
+        "src_syn_ratio_1m",
+        "src_flows_5m",
+        "src_unique_dst_ip_5m",
+        "src_unique_dst_port_5m",
+        "dst_flows_1m",
+        "dst_unique_src_ip_1m",
+        "dst_unique_src_port_1m",
+        "dst_syn_count_1m",
+        "src_destination_port_entropy_1m",
+        "pair_flows_prev_1m",
+        "pair_unique_dst_ports_prev_1m",
+        "pair_unique_dst_ports_prev_5m"
+    ],
+    "temporal_semantics": "Previous completed minute and previous completed five-minute bucket; current bucket excluded",
+    "benign_training_flows": 529918,
+    "benign_validation_flows": 432074,
+    "benign_test_flows": 440031,
+    "dos_hulk_test_flows": 231073,
+    "accuracy": 0.9438298683959565,
+    "precision": 0.9150166326859105,
+    "recall": 0.922548285606713,
+    "f1_score": 0.9187670241009551,
+    "false_positive_rate": 0.0449945572016517,
+    "false_negative_rate": 0.07745171439328696,
+    "benign_test_false_positive_rate": 0.0449945572016517,
+    "dos_hulk_detection_rate": 0.922548285606713,
+    "roc_auc": 0.9820716748043468,
+    "pr_auc": 0.9335268077342762,
+    "confusion_matrix": [
+        [
+            420232,
+            19799
+        ],
+        [
+            17897,
+            213176
+        ]
+    ],
+    "threshold_tradeoff": {
+        "95.0": {
+            "validation_percentile": 95.0,
+            "threshold": 0.8907111744747428,
+            "benign_test_fpr": 0.10187691321747785,
+            "dos_hulk_detection_rate": 0.9874758193298222
+        },
+        "97.5": {
+            "validation_percentile": 97.5,
+            "threshold": 0.9315510190384052,
+            "benign_test_fpr": 0.07253352604702851,
+            "dos_hulk_detection_rate": 0.9226391659778511
+        },
+        "99.0": {
+            "validation_percentile": 99.0,
+            "threshold": 0.961082351634211,
+            "benign_test_fpr": 0.0449945572016517,
+            "dos_hulk_detection_rate": 0.922548285606713
+        },
+        "99.5": {
+            "validation_percentile": 99.5,
+            "threshold": 0.9759554636474309,
+            "benign_test_fpr": 0.02611634180319114,
+            "dos_hulk_detection_rate": 0.922548285606713
+        },
+        "99.9": {
+            "validation_percentile": 99.9,
+            "threshold": 0.9867027407342261,
+            "benign_test_fpr": 0.019112289815944785,
+            "dos_hulk_detection_rate": 0.9199300653905909
+        }
+    },
+    "limitations": [
+        "This is a new training configuration; improved test performance is not guaranteed and must be established by the held-out test.",
+        "DoS Hulk has one benign training date, 2017-07-03, and one validation date, 2017-07-04.",
+        "Host mapping is transductive because endpoint identities from all prepared splits are included.",
+        "The behaviour score is retained from PortScan V6 and is scan-oriented rather than DoS-specific.",
+        "Temporal features use completed one-minute and five-minute buckets, not event-by-event streaming."
+    ]
+}

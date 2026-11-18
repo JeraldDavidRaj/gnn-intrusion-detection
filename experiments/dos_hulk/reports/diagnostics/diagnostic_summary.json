@@ -1,0 +1,29 @@
+{
+    "experiment": "DoS Hulk component and drift analysis",
+    "focus_source": "192.168.10.5",
+    "overall_metrics": {
+        "TN": 417965,
+        "FP": 22066,
+        "FN": 102484,
+        "TP": 128589,
+        "precision": 0.8535329063091168,
+        "recall": 0.5564864782990656,
+        "f1": 0.6737205549501215,
+        "FPR": 0.05014646695346464,
+        "FNR": 0.44351352170093433
+    },
+    "total_benign_test_flows": 440031,
+    "total_benign_false_positives": 22066,
+    "total_attack_test_flows": 231073,
+    "total_detected_attack_flows": 128589,
+    "false_positive_hour_with_highest_rate": 3,
+    "top_false_positive_source": "192.168.10.5",
+    "top_false_positive_destination_port": 443.0,
+    "focus_source_validation_flows": 34300,
+    "focus_source_test_flows": 28343,
+    "component_ablation_file": "component_ablation.csv",
+    "hourly_analysis_file": "false_positives_by_hour.csv",
+    "source_analysis_file": "source_ip_false_positive_summary.csv",
+    "feature_drift_file": "feature_drift_psi_ks.csv",
+    "categorical_drift_file": "categorical_traffic_drift.csv"
+}
